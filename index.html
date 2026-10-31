@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Models of AI Progress — A Quote Dossier</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --soft: #5a5a5a;
+    --line: #d9d9d9;
+    --accent: #8a2f2b;
+    --paper: #fdfcf9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 1.25rem; margin-bottom: 2rem; }
+  h1 { font-size: 2rem; margin: 0 0 .35rem; letter-spacing: -.01em; }
+  .subtitle { color: var(--soft); font-size: 1.02rem; margin: 0; }
+  .about {
+    background: #f2efe9; border: 1px solid var(--line); border-radius: 6px;
+    padding: .9rem 1.1rem; font-size: .88rem; color: var(--soft); margin-bottom: 2rem;
+  }
+  .about strong { color: var(--ink); }
+  nav.toc { border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.25rem; margin-bottom: 3rem; }
+  nav.toc h2 { font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; margin: 0 0 .5rem; color: var(--soft); }
+  nav.toc ol { margin: 0; padding-left: 1.4rem; }
+  nav.toc li { margin: .2rem 0; }
+  nav.toc a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  nav.toc a:hover { border-bottom-color: var(--accent); }
+  section { margin-bottom: 3.25rem; }
+  section > h2 { font-size: 1.45rem; border-bottom: 1px solid var(--line); padding-bottom: .4rem; margin-top: 0; }
+  section > h2 .num { color: var(--accent); margin-right: .5rem; }
+  h3 { font-size: 1.05rem; margin: 1.75rem 0 .75rem; color: var(--soft); font-weight: 600; }
+  blockquote {
+    margin: 0 0 1.1rem; padding: .15rem 0 .15rem 1.1rem;
+    border-left: 3px solid var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.04rem;
+  }
+  ul.quotes { list-style: none; padding: 0; margin: 0; }
+  ul.quotes > li { margin-bottom: 1.1rem; }
+  .cite { display: block; margin-top: .3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: .82rem; color: var(--soft); }
+  .cite a { color: var(--accent); text-decoration: none; border-bottom: 1px solid #d8b3b1; }
+  .cite a:hover { border-bottom-color: var(--accent); }
+  figure { margin: 1.75rem 0; }
+  figure img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; display: block; margin: 0 auto; }
+  figcaption { text-align: center; font-size: .82rem; color: var(--soft); margin-top: .5rem; }
+  figcaption a { color: var(--accent); text-decoration: none; border-bottom: 1px solid #d8b3b1; }
+  sup.fn a { color: var(--accent); text-decoration: none; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: .72em; }
+  ol.footnotes { font-size: .92rem; }
+  ol.footnotes li { margin-bottom: .9rem; }
+  ol.footnotes a { color: var(--accent); }
+  .sources ul { list-style: none; padding: 0; font-size: .9rem; }
+  .sources li { margin-bottom: .55rem; padding-left: 1.1rem; text-indent: -1.1rem; }
+  .sources a { color: var(--accent); }
+  footer { border-top: 1px solid var(--line); padding-top: 1rem; font-size: .8rem; color: var(--soft); }
+  .backlink { font-size: .75rem; text-decoration: none; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Models of AI Progress</h1>
+  <p class="subtitle">Sayash Kapoor and Arvind Narayanan on bottlenecks, expanding task sets, and homogeneity — in their own words</p>
+</header>
+
+<div class="about">
+  <strong>About this document.</strong>
+  This is a quote dossier, not a conventional essay. Every content item below is a <strong>verbatim quotation</strong> from a primary source by Sayash Kapoor and/or Arvind Narayanan, with a link to the source. The only editorial matter is the title, table of contents, section headings, figure captions, and the footnotes in Section 7, which point to related arguments by other writers. The throughline is Kapoor&rsquo;s tweet thread of September 5, 2025 (<a href="https://x.com/sayashk/status/1964018446217150907">@sayashk</a>), cross-posted the same day as a LinkedIn post titled &ldquo;Models of AI progress.&rdquo; Quotations were transcribed from the linked sources. Compiled October 31, 2026.
+</div>
+
+<nav class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#thread">The thread: &ldquo;two completely different causal models of the world&rdquo;</a></li>
+    <li><a href="#monolith">World model 1 &mdash; Is AI progress a monolith or a graph with bottlenecks?</a>
+      <ol>
+        <li><a href="#concrete-bottlenecks">The concrete bottlenecks they name</a></li>
+        <li><a href="#rsi">Recursive self-improvement under this model</a></li>
+      </ol>
+    </li>
+    <li><a href="#task-sets">World model 2 &mdash; A fixed set of AI R&amp;D tasks, or an expanding set?</a></li>
+    <li><a href="#collective">World model 3 &mdash; Individual progress and collective progress</a>
+      <ol>
+        <li><a href="#herding">Historical homogeneity: herding within AI research</a></li>
+        <li><a href="#ai-science">Potential homogeneity: AI and the collective rate of science</a></li>
+      </ol>
+    </li>
+    <li><a href="#benchmarks">Why benchmarks cannot settle it</a></li>
+    <li><a href="#after">What came after the thread</a></li>
+    <li><a href="#footnotes">Footnotes: related arguments by others</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ol>
+</nav>
+
+<!-- ================================================================ -->
+
+<section id="thread">
+  <h2><span class="num">1</span>The thread: &ldquo;two completely different causal models of the world&rdquo;</h2>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;AI as Normal Technology is often contrasted with AI 2027. Many readers have asked if AI evaluations could help settle the debate. Unfortunately, this is not straightforward. The debate is not about differences in AI capability, which evaluations typically measure. It is about two completely different causal models of the world. Most AI evaluations don&rsquo;t even attempt to measure differences in causal models!&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 1, September 5, 2025</a> (full wording per the same-day <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">LinkedIn post</a>)</span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;A key turning point in scenarios like AI 2027 is automated AI R&amp;D &mdash; AI systems used to autonomously improve AI, greatly speeding up the pace of AI progress and potentially leading to superintelligence. In AI as Normal Technology, we did not go too deep into this disagreement, since our broader point was that AI impacts are bottlenecked by diffusion, and the rate of AI progress doesn&rsquo;t change that. But in the time since we wrote the essay, we have thought about this disagreement more deeply, motivated by Helen Toner&rsquo;s workshop on the topic at CSET.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;The key point of this thread is that whether self-improvement occurs depends a lot on our causal model of AI progress. Let&rsquo;s look at three different types of world models that lead to drastically different interpretations of progress, even with exactly the same AI results on benchmarks!&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 3, September 5, 2025</a></span>
+    </li>
+  </ul>
+
+  <figure>
+    <img src="assets/tweet1-causal-models.webp" alt="Diagram contrasting two causal models of AI progress, labelled with capabilities, algorithms, compute, and data on one side and impacts on the other">
+    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 1</a>: the thread&rsquo;s two causal models of the world.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="assets/tweet2-automated-rnd.webp" alt="Diagram of the automated AI R&amp;D step in AI-progress scenarios, in which AI systems autonomously improve AI">
+    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 2</a>: the automated AI R&amp;D turning point.</figcaption>
+  </figure>
+</section>
+
+<!-- ================================================================ -->
+
+<section id="monolith">
+  <h2><span class="num">2</span>World model 1 &mdash; Is AI progress a monolith or a graph with bottlenecks?</h2>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;1) Is AI progress a monolith (100x speedups in inputs leads to 100x speedups in outputs) or does it look like a dense graph with many bottlenecks?&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 4, September 5, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;If we&rsquo;re in a world with monolithic progress, we should expect dramatic returns to AI progress from improving AI capabilities. If we&rsquo;re in the world with bottlenecks, even a 100x speedup in tasks amenable to AI leads to only a negligible speedup in the overall progress. Amdahl&rsquo;s law kicks in, and the overall performance of the system would be limited by its slowest component.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 4, September 5, 2025</a> (full wording per the same-day <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">LinkedIn post</a>)</span> <sup class="fn"><a href="#fn1" id="ref1">&nbsp;1</a></sup>
+    </li>
+  </ul>
+
+  <figure>
+    <img src="assets/tweet4-monolith-bottlenecks.webp" alt="Side-by-side diagrams: on the left, a monolith in which AI speedups propagate directly to progress; on the right, a dense graph in which speedups pass through many connected bottlenecks">
+    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 4</a>: the monolith model versus the dense-graph-with-bottlenecks model.</figcaption>
+  </figure>
+
+  <h3 id="concrete-bottlenecks">2.1 &nbsp;The concrete bottlenecks they name</h3>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;Bottlenecks to progress could include compute limits, data from real-world experiments, and even bottlenecks we haven&rsquo;t recognized yet.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 4, September 5, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;It is true that technical advances in AI have been rapid, but the picture is much less clear when we differentiate AI methods from applications.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">Arvind Narayanan and Sayash Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025, Part I</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;But this process took over two decades instead of a few hours in the case of AlphaZero because safety considerations put a limit on the extent to which each iteration of this loop could be scaled up compared to the previous one.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">Narayanan and Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025, Part I</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;In general, much knowledge is tacit in organizations and is not written down, much less in a form that can be learned passively. This means that these developmental feedback loops will have to happen in each sector and, for more complex tasks, may even need to occur separately in different organizations, limiting opportunities for rapid, parallel learning.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">Narayanan and Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025, Part I</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;Organizations and individuals might be averse to sharing sensitive data with AI companies, and regulations might limit what kinds of data can be shared with third parties in contexts such as healthcare.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">Narayanan and Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025, Part I</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;Historically, the three axes of scaling &mdash; dataset size, model size, and training compute &mdash; have progressed in tandem, and this is known to be optimal. But what will happen if one of the axes (high-quality data) becomes a bottleneck?&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-scaling-myths">Arvind Narayanan and Sayash Kapoor, &ldquo;AI scaling myths,&rdquo; June 27, 2024</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;If LLMs can&rsquo;t do much beyond what&rsquo;s seen in training, at some point, having more data no longer helps because all the tasks that are ever going to be represented in it are already represented.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-scaling-myths">Narayanan and Kapoor, &ldquo;AI scaling myths,&rdquo; June 27, 2024</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;The problem is that accelerating growth requires eliminating bottlenecks to progress. That&rsquo;s harder than most AI boosters assume. AI will likely have uneven effects across sectors, and long-term growth will be bottlenecked by the weakest sector.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/agi-is-not-a-milestone">Sayash Kapoor and Arvind Narayanan, &ldquo;AGI is not a milestone,&rdquo; May 1, 2025</a> <sup class="fn"><a href="#fn1" id="ref1b">&nbsp;1</a></sup></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;There are many bottlenecks to the diffusion of AI: developing useful products and applications, training the workforce to utilize these products, implementing organizational changes to enable AI use, and establishing laws and norms that facilitate AI adoption by companies.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/agi-is-not-a-milestone">Kapoor and Narayanan, &ldquo;AGI is not a milestone,&rdquo; May 1, 2025</a></span>
+    </li>
+  </ul>
+
+  <h3 id="rsi">2.2 &nbsp;Recursive self-improvement under this model</h3>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;It remains to be seen if AI-conducted AI research can offer a reprieve. Perhaps recursive self-improvement in methods is possible, resulting in unbounded speedups in methods. But note that AI development already relies heavily on AI. It is more likely that we will continue to see a gradual increase in the role of automation in AI development than a singular, discontinuous moment when recursive self-improvement is achieved.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">Narayanan and Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025, Part I</a> <sup class="fn"><a href="#fn2" id="ref2">&nbsp;2</a></sup></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;But before strong superintelligence, when some part of the AI research process is automated, the overall process will be bottlenecked by something else. As a result, total research progress will accelerate, but not dramatically so.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://asteriskmag.substack.com/p/common-ground-between-ai-2027-and">Sayash Kapoor, Arvind Narayanan, Daniel Kokotajlo, Eli Lifland, and Thomas Larsen, &ldquo;Common Ground between AI 2027 &amp; AI as Normal Technology,&rdquo; Asterisk, November 12, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;recursive self-improvement could result in an &lsquo;intelligence explosion&rsquo; in which AI systems rapidly improve their own capabilities. Or it could be bottlenecked by other factors such as the lack of real-world data (at least, that&rsquo;s what the authors of AI as Normal Technology expect).&rdquo;</blockquote>
+      <span class="cite">&mdash; footnote 8, <a href="https://asteriskmag.substack.com/p/common-ground-between-ai-2027-and">&ldquo;Common Ground between AI 2027 &amp; AI as Normal Technology,&rdquo; Asterisk, November 12, 2025</a> <sup class="fn"><a href="#fn2" id="ref2b">&nbsp;2</a></sup></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;The agents completed all of the engineering without human help, yet could not make substantial progress towards answering the research questions.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://arxiv.org/abs/2607.27191">Peter Kirgis, Sayash Kapoor, et al., &ldquo;Can AI agents conduct open-ended AI research? Early evidence from two case studies,&rdquo; arXiv:2607.27191, 2026, abstract</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;Our results provide early evidence that today&rsquo;s agents can do the engineering of AI research, but struggle with critical parts of the research lifecycle.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://arxiv.org/abs/2607.27191">Kirgis, Kapoor, et al., arXiv:2607.27191, 2026, abstract</a></span>
+    </li>
+  </ul>
+</section>
+
+<!-- ================================================================ -->
+
+<section id="task-sets">
+  <h2><span class="num">3</span>World model 2 &mdash; A fixed set of AI R&amp;D tasks, or an expanding set?</h2>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;2) Does the world have a fixed set of tasks that constitute AI R&amp;D? Or does it consist of an expanding set of tasks? For example, it would be inconceivable to think of many of today&rsquo;s AI research directions a decade ago, when transformers were not invented.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;If we&rsquo;re in the former world, we might expect drastic speedups once we &lsquo;fully automate&rsquo; AI R&amp;D. If we&rsquo;re in the latter, we might expect human researchers to have more of a role to play with increasing progress.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a></span>
+    </li>
+  </ul>
+
+  <figure>
+    <img src="assets/tweet5-task-sets.webp" alt="Side-by-side diagrams of boxes containing circles: on the left, a fixed set of tasks; on the right, an expanding set of tasks">
+    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 5</a>: the fixed-task-set model versus the expanding-task-set model.</figcaption>
+  </figure>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;This means that the goalpost of AGI will continually move further away as increasing automation redefines which tasks are economically valuable.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">Narayanan and Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025, Part I</a> <sup class="fn"><a href="#fn3" id="ref3">&nbsp;3</a></sup></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;As automation increases, humans will adapt, and will focus on tasks that are not yet automated, perhaps tasks that do not exist today (in Part II we describe what those might look like).&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">Narayanan and Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025, Part I</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;But it is useful to bear in mind that what appears to be a single step might not be so. For example, there may not exist one single breakthrough algorithm that enables sample-efficient learning across all contexts.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">Narayanan and Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025, Part I</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;Even if chatbots now write most code, most human software engineers do not seem to be out of a job yet &mdash; likewise, chatbots are still unlikely to account for the majority of total AI R&amp;D anytime soon.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://asteriskmag.substack.com/p/common-ground-between-ai-2027-and">&ldquo;Common Ground between AI 2027 &amp; AI as Normal Technology,&rdquo; Asterisk, November 12, 2025</a></span>
+    </li>
+  </ul>
+</section>
+
+<!-- ================================================================ -->
+
+<section id="collective">
+  <h2><span class="num">4</span>World model 3 &mdash; Individual progress and collective progress</h2>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;3) Does greater individual progress imply greater collective progress? Or could homogeneity due to AI use actually slow progress?&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 6, September 5, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;In one world, as we have more people working on a problem, we make more collective progress. In the other, even if AI-enabled research allows for quicker individual progress, collective progress could be slower. This could be because of a focus on a narrower set of problems, errors etc.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a></span>
+    </li>
+  </ul>
+
+  <figure>
+    <img src="assets/tweet6-collective.webp" alt="Four diagrams of people with torchlights: individual and collective progress under worlds with and without homogenizing AI assistance">
+    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 6</a>: individual versus collective progress, with collective progress indicated by the size of the torchlight&rsquo;s beam.</figcaption>
+  </figure>
+
+  <h3 id="herding">4.1 &nbsp;Historical homogeneity: herding within AI research</h3>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;One measure of progress is the rate of turnover of central ideas. Unfortunately, throughout its history, the AI field has shown a high degree of herding around popular ideas, and inadequate (in retrospect) levels of exploration of unfashionable ones. A notable example is the sidelining of research on neural networks for many decades.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">Narayanan and Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025, Part I</a></span>
+    </li>
+  </ul>
+
+  <h3 id="ai-science">4.2 &nbsp;Potential homogeneity: AI and the collective rate of science</h3>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;Any serious attempt to forecast the impact of AI on science must confront the production-progress paradox. The rate of publication of scientific papers has been growing exponentially, increasing 500 fold between 1900 and 2015. But actual progress, by any available measure, has been constant or even slowing.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/could-ai-slow-science">Sayash Kapoor and Arvind Narayanan, &ldquo;Could AI slow science?,&rdquo; July 16, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;The key is that any one scientist&rsquo;s attention is finite, so they can only pay attention to a limited number of papers every year. So it is too risky for authors of papers to depart from the canon.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/could-ai-slow-science">Kapoor and Narayanan, &ldquo;Could AI slow science?,&rdquo; July 16, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;The greater the rate of production, the more the noise, so the less attention truly novel papers will achieve, and thus will be less likely to break through into the canon.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/could-ai-slow-science">Kapoor and Narayanan, &ldquo;Could AI slow science?,&rdquo; July 16, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;AI could make individual researchers more creative but decrease the creativity of the collective because of a homogenizing effect. AI could also exacerbate the inequality of attention and make it even harder for new ideas to break through.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/could-ai-slow-science">Kapoor and Narayanan, &ldquo;Could AI slow science?,&rdquo; July 16, 2025</a> <sup class="fn"><a href="#fn4" id="ref4">&nbsp;4</a></sup></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;So individual researchers&rsquo; careers might be better off if they are risk averse, but it might reduce the collective rate of progress. Rzhetsky et al. find evidence of this phenomenon in biomedicine, where experiments tend to focus too much on experimenting with known molecules that are already considered important (which would be more likely to lead to publishing a paper) rather than more risky experiments that could lead to genuine breakthroughs.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/could-ai-slow-science">Kapoor and Narayanan, &ldquo;Could AI slow science?,&rdquo; July 16, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;They are simply trying to accelerate production, which is like adding lanes to a highway when the slowdown is actually caused by a toll booth. It&rsquo;s sure to make things worse.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/could-ai-slow-science">Kapoor and Narayanan, &ldquo;Could AI slow science?,&rdquo; July 16, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;They understood the research questions and proposed directions that closely mirrored those of the authors of the original papers.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://arxiv.org/abs/2607.27191">Kirgis, Kapoor, et al., arXiv:2607.27191, 2026, takeaway 1</a></span>
+    </li>
+  </ul>
+</section>
+
+<!-- ================================================================ -->
+
+<section id="benchmarks">
+  <h2><span class="num">5</span>Why benchmarks cannot settle it</h2>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;Even if we have the exact same results on benchmarks, figuring out which of these figures most closely resembles the world should radically change our conclusions about the pace of AI progress!&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 7, September 5, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;But while there is a lot of work on developing isolated evaluations of AI (benchmarks, uplift studies etc.), there isn&rsquo;t much work that seriously tries to distinguish between these different models of the world.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a></span>
+    </li>
+  </ul>
+
+  <figure>
+    <img src="assets/tweet7-benchmarks.webp" alt="Diagram relating identical benchmark results to divergent conclusions about the pace of AI progress, depending on the underlying causal model">
+    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 7</a>: identical benchmark results, different conclusions.</figcaption>
+  </figure>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;Both AI 2027 and AI as Normal Technology are coherent worldviews. They represent very different causal understandings of how technology will impact society.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/a-guide-to-understanding-ai-as-normal">Arvind Narayanan and Sayash Kapoor, &ldquo;A guide to understanding AI as normal technology,&rdquo; September 9, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;Unless we as a community get much better at measurement of the present and testing competing causal explanations of progress, the level of energy directed at prediction will be misdirected, because we lack ways of resolving those predictions.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/a-guide-to-understanding-ai-as-normal">Narayanan and Kapoor, &ldquo;A guide to understanding AI as normal technology,&rdquo; September 9, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;construct validity (how well a benchmark measures the real-world capability or task that it&rsquo;s supposed to measure)&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://asteriskmag.substack.com/p/common-ground-between-ai-2027-and">&ldquo;Common Ground between AI 2027 &amp; AI as Normal Technology,&rdquo; Asterisk, November 12, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;Even if benchmark saturation occurred, it would not necessarily imply that all of AI R&amp;D is close to being fully automated.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://asteriskmag.substack.com/p/common-ground-between-ai-2027-and">&ldquo;Common Ground between AI 2027 &amp; AI as Normal Technology,&rdquo; Asterisk, November 12, 2025</a></span>
+    </li>
+  </ul>
+</section>
+
+<!-- ================================================================ -->
+
+<section id="after">
+  <h2><span class="num">6</span>What came after the thread</h2>
+
+  <ul class="quotes">
+    <li>
+      <blockquote>&ldquo;Since the release of AI as Normal Technology, @random_walker and I have been thinking about these and other differences in worldviews that inform differing visions of AI progress. We will have more to share soon.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 8, September 5, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;We have already published two follow-up essays to AI as Normal Technology and will publish more regularly as we expand our framework into a book, which we plan to complete in late 2026 for publication in 2027.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/a-guide-to-understanding-ai-as-normal">Narayanan and Kapoor, &ldquo;A guide to understanding AI as normal technology,&rdquo; September 9, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;It might be possible to develop metrics that would help distinguish between these two possible futures before we get there. We are, in fact, continuing to collaborate on the creation of such metrics. Stay tuned.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://asteriskmag.substack.com/p/common-ground-between-ai-2027-and">&ldquo;Common Ground between AI 2027 &amp; AI as Normal Technology,&rdquo; Asterisk, November 12, 2025</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;We introduce a third way to measure progress towards AI R&amp;D automation. An agent takes on the central, open-ended research question of a high-quality unpublished paper, and the paper&rsquo;s original authors grade its output. We call these shadow evaluations.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://arxiv.org/abs/2607.27191">Kirgis, Kapoor, et al., arXiv:2607.27191, 2026, abstract</a> (<a href="https://cruxevals.com/crux/can-ai-agents-conduct-research">project materials</a>)</span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;Both runs demonstrate that while agents can solve the engineering problems necessary to do the research, they could not make substantial progress towards answering the research questions.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-agents-cant-yet-do-open-ended-ai-research">Sayash Kapoor, &ldquo;AI agents can&rsquo;t yet do open-ended AI research,&rdquo; August 5, 2026</a></span>
+    </li>
+
+    <li>
+      <blockquote>&ldquo;Yet, a single agent finished 0/50 open-ended tasks.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-agents-cant-yet-do-open-ended-ai-research">Sayash Kapoor, &ldquo;AI agents can&rsquo;t yet do open-ended AI research,&rdquo; August 5, 2026</a></span>
+    </li>
+  </ul>
+</section>
+
+<!-- ================================================================ -->
+
+<section id="footnotes">
+  <h2><span class="num">7</span>Footnotes: related arguments by others</h2>
+
+  <p class="about">These footnotes are the dossier&rsquo;s only editorial commentary. They point to writers outside the Kapoor&ndash;Narayanan corpus who make arguments adjacent to the three causal models. Their content is not quoted above and is not attributed to Kapoor or Narayanan.</p>
+
+  <ol class="footnotes">
+    <li id="fn1">
+      <strong>Diffusion bottlenecks and why AI may not produce transformative economic growth.</strong>
+      Tyler Cowen argues that AI takeoff will be relatively slow because productivity gains are bottlenecked by human and institutional constraints on diffusion rather than by AI capability: <a href="https://marginalrevolution.com/marginalrevolution/2025/02/why-i-think-ai-take-off-is-relatively-slow.html">&ldquo;Why I think AI take-off is relatively slow,&rdquo; Marginal Revolution, February 23, 2025</a>; see also his interview <a href="https://www.dwarkesh.com/p/tyler-cowen-4">&ldquo;The #1 bottleneck to AI progress is humans,&rdquo; Dwarkesh Podcast, January 2025</a>. This parallels the Amdahl&rsquo;s-law argument of Section 2. <a class="backlink" href="#ref1">&uarr;&nbsp;2.1</a>
+    </li>
+    <li id="fn2">
+      <strong>Why recursive self-improvement need not produce an intelligence explosion.</strong>
+      Robin Hanson&rsquo;s side of the Hanson&ndash;Yudkowsky debate argues that a lone AI system improving itself is unlikely to outpace the wider, distributed research economy: <a href="https://intelligence.org/ai-foom-debate"><em>The Hanson&ndash;Yudkowsky AI-Foom Debate</em>, Machine Intelligence Research Institute, 2013</a> (<a href="http://intelligence.org/files/AIFoomDebate.pdf">PDF</a>; summary: <a href="https://www.lesswrong.com/lw/fih/a_summary_of_the_hansonyudkowsky_foom_debate">LessWrong</a>). This is the same disagreement marked out in the Section 2.2 quotes. <a class="backlink" href="#ref2">&uarr;&nbsp;2.2</a>
+    </li>
+    <li id="fn3">
+      <strong>Expanding task sets and the economics of ideas.</strong>
+      The observation that research effort must continually expand into new tasks as existing ideas are exhausted is formalized in Charles&nbsp;I. Jones&rsquo;s &ldquo;idea production functions&rdquo; and measured in Nicholas Bloom, John Van Reenen, Michael Webb, and Jones&rsquo;s &ldquo;Are Ideas Getting Harder to Find?&rdquo; (<a href="https://www.nber.org/papers/w23782">NBER Working Paper 23782, 2017, published in <em>American Economic Review</em> 110(4), 2020</a>), which documents declining research productivity across fields. <a class="backlink" href="#ref3">&uarr;&nbsp;3</a>
+    </li>
+    <li id="fn4">
+      <strong>Homogenization of creative output under generative AI.</strong>
+      Anil K. Doshi and Oliver P. Hauser find experimentally that generative AI raises individual creative output while narrowing the collective distribution of ideas: <a href="https://doi.org/10.1126/sciadv.adn5608">&ldquo;Generative AI enhances individual creativity but reduces the collective diversity of novel content,&rdquo; <em>Science Advances</em> 10(28), July 2024</a>. This is the empirical counterpart of the Section 4.2 quotes. <a class="backlink" href="#ref4">&uarr;&nbsp;4.2</a>
+    </li>
+  </ol>
+</section>
+
+<!-- ================================================================ -->
+
+<section id="sources" class="sources">
+  <h2><span class="num">8</span>Sources</h2>
+  <ul>
+    <li>Sayash Kapoor, tweet thread, September 5, 2025 &mdash; <a href="https://x.com/sayashk/status/1964018446217150907">x.com/sayashk/status/1964018446217150907</a> (diagrams: posts 1, 2, 4, 5, 6, 7)</li>
+    <li>Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025 &mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">linkedin.com/posts/ksayash_models-of-ai-progress</a></li>
+    <li>Arvind Narayanan and Sayash Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025 &mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">normaltech.ai</a> · <a href="https://knightcolumbia.org/content/ai-as-normal-technology">Knight First Amendment Institute</a> · <a href="https://kfai-documents.s3.amazonaws.com/documents/0ee1da899a/AI-as-Normal-Technology---Narayanan---Kapoor-Final.pdf">PDF</a></li>
+    <li>Arvind Narayanan and Sayash Kapoor, &ldquo;AI scaling myths,&rdquo; June 27, 2024 &mdash; <a href="https://www.normaltech.ai/p/ai-scaling-myths">normaltech.ai</a></li>
+    <li>Sayash Kapoor and Arvind Narayanan, &ldquo;AGI is not a milestone,&rdquo; May 1, 2025 &mdash; <a href="https://www.normaltech.ai/p/agi-is-not-a-milestone">normaltech.ai</a> · <a href="https://cyber.harvard.edu/story/2025-05/agi-not-milestone">Berkman Klein Center</a></li>
+    <li>Sayash Kapoor and Arvind Narayanan, &ldquo;Could AI slow science?,&rdquo; July 16, 2025 &mdash; <a href="https://www.normaltech.ai/p/could-ai-slow-science">normaltech.ai</a></li>
+    <li>Arvind Narayanan and Sayash Kapoor, &ldquo;A guide to understanding AI as normal technology,&rdquo; September 9, 2025 &mdash; <a href="https://www.normaltech.ai/p/a-guide-to-understanding-ai-as-normal">normaltech.ai</a></li>
+    <li>Sayash Kapoor, Arvind Narayanan, Daniel Kokotajlo, Eli Lifland, and Thomas Larsen, &ldquo;Common Ground between AI 2027 &amp; AI as Normal Technology,&rdquo; Asterisk, November 12, 2025 &mdash; <a href="https://asteriskmag.substack.com/p/common-ground-between-ai-2027-and">asteriskmag.substack.com</a></li>
+    <li>Peter Kirgis, Sayash Kapoor, et al., &ldquo;Can AI agents conduct open-ended AI research? Early evidence from two case studies,&rdquo; arXiv:2607.27191, 2026 &mdash; <a href="https://arxiv.org/abs/2607.27191">arxiv.org/abs/2607.27191</a> · <a href="https://cruxevals.com/crux/can-ai-agents-conduct-research">CRUX project materials</a></li>
+    <li>Sayash Kapoor, &ldquo;AI agents can&rsquo;t yet do open-ended AI research,&rdquo; August 5, 2026 &mdash; <a href="https://www.normaltech.ai/p/ai-agents-cant-yet-do-open-ended-ai-research">normaltech.ai</a></li>
+    <li>Footnoted external sources: <a href="https://marginalrevolution.com/marginalrevolution/2025/02/why-i-think-ai-take-off-is-relatively-slow.html">Cowen 2025</a> · <a href="https://www.dwarkesh.com/p/tyler-cowen-4">Cowen 2025 (interview)</a> · <a href="https://intelligence.org/ai-foom-debate">Hanson &amp; Yudkowsky 2013</a> · <a href="https://www.nber.org/papers/w23782">Bloom, Jones, Van Reenen, Webb 2017/2020</a> · <a href="https://doi.org/10.1126/sciadv.adn5608">Doshi &amp; Hauser 2024</a></li>
+  </ul>
+</section>
+
+<footer>
+  Compiled October 31, 2026. All quotations are verbatim from the linked sources; quotations from the tweet thread follow the thread text where fully rendered and the same-day LinkedIn post elsewhere, as noted in each citation. Diagrams downloaded from <a href="https://x.com/sayashk/status/1964018446217150907">x.com/sayashk</a> and reproduced here for private study.
+</footer>
+
+</main>
+</body>
+</html>
