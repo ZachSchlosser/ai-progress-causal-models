@@ -54,6 +54,12 @@
   figure img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; display: block; margin: 0 auto; }
   figcaption { text-align: center; font-size: .82rem; color: var(--soft); margin-top: .5rem; }
   figcaption a { color: var(--accent); text-decoration: none; border-bottom: 1px solid #d8b3b1; }
+  .threadnote { font-size: .85rem; color: var(--soft); margin: 0 0 1.75rem; }
+  .tweet { margin-bottom: 2.4rem; }
+  .tweet-meta { font-size: .8rem; color: var(--soft); margin-bottom: .35rem; }
+  .tweet-meta a { color: var(--accent); text-decoration: none; border-bottom: 1px solid #d8b3b1; }
+  .tweet blockquote { margin-bottom: 0; }
+  .tweet img { display: block; max-width: min(100%, 540px); height: auto; border: 1px solid var(--line); border-radius: 4px; margin: .85rem auto 0; }
   sup.fn a { color: var(--accent); text-decoration: none; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: .72em; }
   ol.footnotes { font-size: .92rem; }
   ol.footnotes li { margin-bottom: .9rem; }
@@ -75,7 +81,7 @@
 
 <div class="about">
   <strong>About this document.</strong>
-  This is a quote dossier, not a conventional essay. Every content item below is a <strong>verbatim quotation</strong> from a primary source by Sayash Kapoor and/or Arvind Narayanan, with a link to the source; quotations are drawn from the full texts of the sources, and italics follow the sources&rsquo; emphasis. The only editorial matter is the title, table of contents, section headings, figure captions, and the footnotes in Section 7, which point to related arguments by other writers. The throughline is Kapoor&rsquo;s tweet thread of September 5, 2025 (<a href="https://x.com/sayashk/status/1964018446217150907">@sayashk</a>), cross-posted the same day as a LinkedIn post titled &ldquo;Models of AI progress.&rdquo; Compiled October 31, 2026 (v2).
+  This is a quote dossier, not a conventional essay. Every content item below is a <strong>verbatim quotation</strong> from a primary source by Sayash Kapoor and/or Arvind Narayanan, with a link to the source; quotations are drawn from the full texts of the sources, and italics follow the sources&rsquo; emphasis. The only editorial matter is the title, table of contents, section headings, figure captions, and the footnotes in Section 7, which point to related arguments by other writers. The throughline is Kapoor&rsquo;s tweet thread of September 5, 2025 (<a href="https://x.com/sayashk/status/1964018446217150907">@sayashk</a>), cross-posted the same day as a LinkedIn post titled &ldquo;Models of AI progress&rdquo;; Section 1 reproduces the thread in full, with its six diagrams inline. Compiled October 31, 2026 (v3).
 </div>
 
 <nav class="toc">
@@ -107,32 +113,67 @@
 <section id="thread">
   <h2><span class="num">1</span>The thread: &ldquo;two completely different causal models of the world&rdquo;</h2>
 
+  <p class="threadnote">The thread in full &mdash; eight posts, six diagrams &mdash; in posting order, each diagram beneath its post, as in the original. Text is quoted verbatim; where the archived rendering truncates a post, the cut is marked [&hellip;].</p>
+
+  <article class="tweet">
+    <div class="tweet-meta">Tweet 1 of 8 &middot; <a href="https://x.com/sayashk/status/1964018446217150907">@sayashk, September 5, 2025</a></div>
+    <blockquote>&ldquo;AI as Normal Technology is often contrasted with AI 2027. Many readers have asked if AI evaluations could help settle the debate. Unfortunately, this is not straightforward. The debate is not about differences in AI capability, which evaluations typically measure. It is about two completely different causal models of the world. Most AI evaluations don&rsquo;t even attempt to measure differences in causal models!&rdquo;</blockquote>
+    <img src="assets/tweet1-causal-models.webp" alt="Diagram contrasting two causal models of AI progress, labelled with capabilities, algorithms, compute, and data on one side and impacts on the other">
+  </article>
+
+  <article class="tweet">
+    <div class="tweet-meta">Tweet 2 of 8 &middot; <a href="https://x.com/sayashk/status/1964018446217150907">@sayashk, September 5, 2025</a></div>
+    <blockquote>&ldquo;A key turning point in scenarios like AI 2027 is automated AI R&amp;D &mdash; AI systems used to autonomously improve AI, greatly speeding up the pace of AI progress. In AI as Normal Technology, we discussed some bottlenecks to such automation. We did not go too deep into this disagreement, since our broader point was that AI impacts are bottlenecked by diffusion, and the rate of AI progress doesn&rsquo;t change that.&rdquo;</blockquote>
+    <img src="assets/tweet2-automated-rnd.webp" alt="Diagram of the automated AI R&amp;D step in AI-progress scenarios, in which AI systems autonomously improve AI">
+  </article>
+
+  <article class="tweet">
+    <div class="tweet-meta">Tweet 3 of 8 &middot; <a href="https://x.com/sayashk/status/1964018446217150907">@sayashk, September 5, 2025</a></div>
+    <blockquote>&ldquo;The key point of this thread is that whether self-improvement occurs depends a lot on our causal model of AI progress. Let&rsquo;s look at three different types of world models that lead to drastically different interpretations of progress, even with exactly the same AI results on benchmarks!&rdquo;</blockquote>
+  </article>
+
+  <article class="tweet">
+    <div class="tweet-meta">Tweet 4 of 8 &middot; <a href="https://x.com/sayashk/status/1964018446217150907">@sayashk, September 5, 2025</a></div>
+    <blockquote>&ldquo;1. Is AI progress a monolith (100x speedups in inputs leads to 100x speedups in outputs) or does it look like a dense graph with many bottlenecks? Bottlenecks to progress could include compute limits, data from real-world experiments, and even bottlenecks we haven&rsquo;t recognized yet. If we&rsquo;re in a world with monolithic progress, we should expect dramatic returns to AI progress from improving AI capabilities. If we&rsquo;re in the world with bottlenecks, even a 100x speedup in tasks amenable to AI leads to only a negligible speedup in the overall progress. Amdahl&rsquo;s law kicks in, and the overall performance of the system would be limited by its slowest component.&rdquo;</blockquote>
+    <img src="assets/tweet4-monolith-bottlenecks.webp" alt="Side-by-side diagrams: on the left, a monolith in which AI speedups propagate directly to progress; on the right, a dense graph in which speedups pass through many connected bottlenecks">
+  </article>
+
+  <article class="tweet">
+    <div class="tweet-meta">Tweet 5 of 8 &middot; <a href="https://x.com/sayashk/status/1964018446217150907">@sayashk, September 5, 2025</a></div>
+    <blockquote>&ldquo;2) Does the world have a fixed set of finite tasks that constitute AI R&amp;D (left; as we &lsquo;solve&rsquo; all AI R&amp;D tasks, we automate all of AI R&amp;D)? Or does it consist of an expanding set of tasks that constitute AI R&amp;D (left; as the pie expands, humans have more tasks to work on, not fewer)? (It is worth noting that it would be inconceivable to think of many of today&rsquo;s AI research directions a decade ago, when transformers were not invented.) If we&rsquo;re in the former world, we might expect drastic speedups once we &lsquo;fully automate&rsquo; AI R&amp;D. If we&rsquo;re in the latter, we might expect human researchers to have more of a role to play with increasing progress.&rdquo;</blockquote>
+    <img src="assets/tweet5-task-sets.webp" alt="Side-by-side diagrams of boxes containing circles: on the left, a fixed set of tasks; on the right, an expanding set of tasks">
+  </article>
+
+  <article class="tweet">
+    <div class="tweet-meta">Tweet 6 of 8 &mdash; text truncated in the archived rendering; the continuation of the argument appears in the companion post below &middot; <a href="https://x.com/sayashk/status/1964018446217150907">@sayashk, September 5, 2025</a></div>
+    <blockquote>&ldquo;3) Does greater individual progress imply greater collective progress? Or could homogeneity due to AI use actually slow progress? In the figure on the bottom left, AI-assisted research leads to greater collective progress (indicated by size of the torchlight&rsquo;s beam), since [&hellip;]&rdquo;</blockquote>
+    <img src="assets/tweet6-collective.webp" alt="Four diagrams of people with torchlights: individual and collective progress under worlds with and without homogenizing AI assistance">
+  </article>
+
+  <article class="tweet">
+    <div class="tweet-meta">Tweet 7 of 8 &middot; <a href="https://x.com/sayashk/status/1964018446217150907">@sayashk, September 5, 2025</a></div>
+    <blockquote>&ldquo;Even if we have the exact same results on benchmarks, figuring out which of these figures most closely resembles the world should radically change our conclusions about the pace of AI progress! But while there is a lot of work on developing isolated evaluations of AI (benchmarks, uplift studies etc.), there isn&rsquo;t much work that seriously tries to distinguish between these different models of the world.&rdquo;</blockquote>
+    <img src="assets/tweet7-benchmarks.webp" alt="Diagram relating identical benchmark results to divergent conclusions about the pace of AI progress, depending on the underlying causal model">
+  </article>
+
+  <article class="tweet">
+    <div class="tweet-meta">Tweet 8 of 8 &middot; <a href="https://x.com/sayashk/status/1964018446217150907">@sayashk, September 5, 2025</a></div>
+    <blockquote>&ldquo;Since the release of AI as Normal Technology, @random_walker and I have been thinking about these and other differences in worldviews that inform differing visions of AI progress. We will have more to share soon.&rdquo;</blockquote>
+  </article>
+
+  <h3 id="companion">The same-day companion post</h3>
+
   <ul class="quotes">
     <li>
-      <blockquote>&ldquo;AI as Normal Technology is often contrasted with AI 2027. Many readers have asked if AI evaluations could help settle the debate. Unfortunately, this is not straightforward. The debate is not about differences in AI capability, which evaluations typically measure. It is about two completely different causal models of the world. Most AI evaluations don&rsquo;t even attempt to measure differences in causal models!&rdquo;</blockquote>
-      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 1, September 5, 2025</a> (full wording per the same-day <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">LinkedIn post</a>)</span>
-    </li>
-
-    <li>
       <blockquote>&ldquo;A key turning point in scenarios like AI 2027 is automated AI R&amp;D &mdash; AI systems used to autonomously improve AI, greatly speeding up the pace of AI progress and potentially leading to superintelligence. In AI as Normal Technology, we did not go too deep into this disagreement, since our broader point was that AI impacts are bottlenecked by diffusion, and the rate of AI progress doesn&rsquo;t change that. But in the time since we wrote the essay, we have thought about this disagreement more deeply, motivated by Helen Toner&rsquo;s workshop on the topic at CSET.&rdquo;</blockquote>
-      <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a></span>
+      <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a> (fuller version of the thread&rsquo;s argument)</span>
     </li>
 
     <li>
-      <blockquote>&ldquo;The key point of this thread is that whether self-improvement occurs depends a lot on our causal model of AI progress. Let&rsquo;s look at three different types of world models that lead to drastically different interpretations of progress, even with exactly the same AI results on benchmarks!&rdquo;</blockquote>
-      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 3, September 5, 2025</a></span>
+      <blockquote>&ldquo;In one world, as we have more people working on a problem, we make more collective progress. In the other, even if AI-enabled research allows for quicker individual progress, collective progress could be slower. This could be because of a focus on a narrower set of problems, errors etc.&rdquo;</blockquote>
+      <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a> (completing the argument of tweet 6)</span>
     </li>
   </ul>
-
-  <figure>
-    <img src="assets/tweet1-causal-models.webp" alt="Diagram contrasting two causal models of AI progress, labelled with capabilities, algorithms, compute, and data on one side and impacts on the other">
-    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 1</a>: the thread&rsquo;s two causal models of the world.</figcaption>
-  </figure>
-
-  <figure>
-    <img src="assets/tweet2-automated-rnd.webp" alt="Diagram of the automated AI R&amp;D step in AI-progress scenarios, in which AI systems autonomously improve AI">
-    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 2</a>: the automated AI R&amp;D turning point.</figcaption>
-  </figure>
 </section>
 
 <!-- ================================================================ -->
@@ -141,11 +182,6 @@
   <h2><span class="num">2</span>Causal model 1 &mdash; Is AI progress a monolith or a graph with bottlenecks?</h2>
 
   <ul class="quotes">
-    <li>
-      <blockquote>&ldquo;1. Is AI progress a monolith (100x speedups in inputs leads to 100x speedups in outputs) or does it look like a dense graph with many bottlenecks?&rdquo;</blockquote>
-      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 4, September 5, 2025</a></span>
-    </li>
-
     <li>
       <blockquote>&ldquo;If we&rsquo;re in a world with monolithic progress, we should expect dramatic returns to AI progress from improving AI capabilities. If we&rsquo;re in the world with bottlenecks, even a 100x speedup in tasks amenable to AI leads to only a negligible speedup in the overall progress. Amdahl&rsquo;s law kicks in, and the overall performance of the system would be limited by its slowest component.&rdquo;</blockquote>
       <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 4, September 5, 2025</a> (full wording per the same-day <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">LinkedIn post</a>)</span> <sup class="fn"><a href="#fn1" id="ref1">&nbsp;1</a></sup>
@@ -166,11 +202,6 @@
       <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">Narayanan and Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025, Part I</a></span>
     </li>
   </ul>
-
-  <figure>
-    <img src="assets/tweet4-monolith-bottlenecks.webp" alt="Side-by-side diagrams: on the left, a monolith in which AI speedups propagate directly to progress; on the right, a dense graph in which speedups pass through many connected bottlenecks">
-    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 4</a>: the monolith model versus the dense-graph-with-bottlenecks model.</figcaption>
-  </figure>
 
   <h3 id="concrete-bottlenecks">2.1 &nbsp;The concrete bottlenecks they name</h3>
 
@@ -322,16 +353,7 @@
       <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a></span>
     </li>
 
-    <li>
-      <blockquote>&ldquo;If we&rsquo;re in the former world, we might expect drastic speedups once we &lsquo;fully automate&rsquo; AI R&amp;D. If we&rsquo;re in the latter, we might expect human researchers to have more of a role to play with increasing progress.&rdquo;</blockquote>
-      <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a></span>
-    </li>
   </ul>
-
-  <figure>
-    <img src="assets/tweet5-task-sets.webp" alt="Side-by-side diagrams of boxes containing circles: on the left, a fixed set of tasks; on the right, an expanding set of tasks">
-    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 5</a>: the fixed-task-set model versus the expanding-task-set model.</figcaption>
-  </figure>
 
   <ul class="quotes">
     <li>
@@ -388,20 +410,10 @@
     </li>
 
     <li>
-      <blockquote>&ldquo;In one world, as we have more people working on a problem, we make more collective progress. In the other, even if AI-enabled research allows for quicker individual progress, collective progress could be slower. This could be because of a focus on a narrower set of problems, errors etc.&rdquo;</blockquote>
-      <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a></span>
-    </li>
-
-    <li>
       <blockquote>&ldquo;Even if individual scientists benefit from adopting AI, it doesn&rsquo;t mean science as a whole will benefit. When thinking about the macro effects, we are dealing with a complex system with emergent properties.&rdquo;</blockquote>
       <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/could-ai-slow-science">Kapoor and Narayanan, &ldquo;Could AI slow science?,&rdquo; July 16, 2025</a></span>
     </li>
   </ul>
-
-  <figure>
-    <img src="assets/tweet6-collective.webp" alt="Four diagrams of people with torchlights: individual and collective progress under worlds with and without homogenizing AI assistance">
-    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 6</a>: individual versus collective progress, with collective progress indicated by the size of the torchlight&rsquo;s beam.</figcaption>
-  </figure>
 
   <h3 id="herding">4.1 &nbsp;Historical homogeneity: herding and the ossification of canon</h3>
 
@@ -524,23 +536,6 @@
 
   <ul class="quotes">
     <li>
-      <blockquote>&ldquo;Even if we have the exact same results on benchmarks, figuring out which of these figures most closely resembles the world should radically change our conclusions about the pace of AI progress!&rdquo;</blockquote>
-      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 7, September 5, 2025</a></span>
-    </li>
-
-    <li>
-      <blockquote>&ldquo;But while there is a lot of work on developing isolated evaluations of AI (benchmarks, uplift studies etc.), there isn&rsquo;t much work that seriously tries to distinguish between these different models of the world.&rdquo;</blockquote>
-      <span class="cite">&mdash; <a href="https://www.linkedin.com/posts/ksayash_models-of-ai-progress-activity-7369793551636807681-JEKZ">Sayash Kapoor, &ldquo;Models of AI progress,&rdquo; LinkedIn, September 5, 2025</a></span>
-    </li>
-  </ul>
-
-  <figure>
-    <img src="assets/tweet7-benchmarks.webp" alt="Diagram relating identical benchmark results to divergent conclusions about the pace of AI progress, depending on the underlying causal model">
-    <figcaption>Diagram accompanying <a href="https://x.com/sayashk/status/1964018446217150907">tweet 7</a>: identical benchmark results, different conclusions.</figcaption>
-  </figure>
-
-  <ul class="quotes">
-    <li>
       <blockquote>&ldquo;AI benchmarks are useful for measuring progress in methods; unfortunately, they have often been misunderstood as measuring progress in applications, and this confusion has been a driver of much hype about imminent economic transformation.&rdquo;</blockquote>
       <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/ai-as-normal-technology">Narayanan and Kapoor, &ldquo;AI as Normal Technology,&rdquo; April 15, 2025, Part I</a></span>
     </li>
@@ -593,11 +588,6 @@
   <h2><span class="num">6</span>What came after the thread</h2>
 
   <ul class="quotes">
-    <li>
-      <blockquote>&ldquo;Since the release of AI as Normal Technology, @random_walker and I have been thinking about these and other differences in worldviews that inform differing visions of AI progress. We will have more to share soon.&rdquo;</blockquote>
-      <span class="cite">&mdash; <a href="https://x.com/sayashk/status/1964018446217150907">Sayash Kapoor, tweet thread, tweet 8, September 5, 2025</a></span>
-    </li>
-
     <li>
       <blockquote>&ldquo;We have already published two follow-up essays to AI as Normal Technology and will publish more regularly as we expand our framework into a book, which we plan to complete in late 2026 for publication in 2027.&rdquo;</blockquote>
       <span class="cite">&mdash; <a href="https://www.normaltech.ai/p/a-guide-to-understanding-ai-as-normal">Narayanan and Kapoor, &ldquo;A guide to understanding AI as normal technology,&rdquo; September 9, 2025</a></span>
